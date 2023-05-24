@@ -1,4 +1,5 @@
 # http://ce.sc.edu/cyberinfra/workshops/workshop_2020/zeek_labs/Lab%206%20-%20Introduction%20to%20Zeek%20Scripting.pdf
+# zeek -r traffic.pcap sas.zeek 
 
 event zeek_init(){
     print("Start");
