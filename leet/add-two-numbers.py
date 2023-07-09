@@ -1,4 +1,3 @@
-# https://leetcode.com/problems/add-two-numbers/solution/
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
@@ -9,16 +8,16 @@ class Solution:
         
         lresult = ListNode(0)
         dummy = lresult
+        carry = 0
     
         while True:
-            l3 = ListNode(l1.val + l2.val)
+            l3 = ListNode((l1.val + l2.val + carry)%10)
+            carry = (l1.val + l2.val + carry)//10
             
             dummy.next = l3
-            print(dummy)
             dummy = l3
-            print(dummy, lresult)
-            print(l1.val, l2.val)
-            if not l1.next or not l2.next: break
-            l1 = l1.next
-            l2 = l2.next
+
+            if not l1.next and not l2.next and not carry: break
+            l1 = l1.next or ListNode(0)
+            l2 = l2.next or ListNode(0)
         return lresult.next
