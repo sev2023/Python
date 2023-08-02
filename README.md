@@ -1,6 +1,19 @@
 # Python
 
 > hakerrank
+```
+def decor(fun):
+  def wrapper(par):
+    print("Decorated ", end="")
+    return fun(par)
+  return wrapper
+
+def printSqr(x):
+  print(x * x)
+
+printSqr = decor(printSqr)
+printSqr(9)     # returens "Decorated 81"
+```
 
 # Book  
 > #convert number 12 into 8-digit binary  
