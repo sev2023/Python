@@ -1,3 +1,8 @@
+# Magic regex
+```
+(?<=(.))(?!\1)
+```
+
 # Python
 
 > hakerrank
