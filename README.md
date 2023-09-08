@@ -40,6 +40,21 @@ $ export FLASK_RUN_PORT=8800
   
 > $ flask run --port 8765 --debug  // inside app.py folder  
 
+# BeautifulSoup
+```
+import requests
+from bs4 import BeautifulSoup
+
+def fetch_quote():
+    response = requests.get('http://quotes.toscrape.com/random')
+    soup = BeautifulSoup(response.text)
+    quote_element = soup.find(class_='quote')
+    author  = quote_element.find(class_='author').get_text()
+    text = quote_element.find(class_='text').get_text()\
+                        .replace('“', '').replace('”', '')
+    return { 'author': author, 'text': text }
+```
+  
 # HTTP
 ```
 import http.client
